@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">KarateTournament-app</string>
+
+    <string name="title_register">Register</string>
+    <string name="title_bracket">Bracket</string>
+    <string name="title_scoreboard">Scoreboard</string>
+    <string name="title_result">Result</string>
+    <string name="hello_blank_fragment">blank</string>
+
+    <!-- Login Dialog -->
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_label">Login</string>
+
+    <!-- RadioGroup: Gender -->
+    <string name="Male">Male</string>
+    <string name="Female">Female</string>
+
+    <!-- Spinner: roles -->
+    <string-array name="roles">
+        <item>Athlete</item>
+        <item>Coach</item>
+        <item>Volunteer</item>
+        <item>Referee</item>
+        <item>Event Manager</item>
+    </string-array>
+
+    <!-- Spinner: experience -->
+    <string-array name="experience">
+        <item>0-1 Year Beg</item>
+        <item>1-2 Year Nov</item>
+        <item>2-4 Year Int</item>
+        <item>4+  Year Adv</item>
+    </string-array>
+
+    <!-- Spinner: clubID -->
+    <string-array name="clubID">
+        <item>IMA Budokan Shotokan</item>
+        <item>IMA Utah</item>
+        <item>IMA Colorado</item>
+        <item>IMA NorthFork</item>
+        <item>IMA Idaho</item>
+    </string-array>
+
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
+</resources>

@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 //TODO: Fix these import with right file
 import com.example.jenniferniang.karatetournament_app.R;
-import com.example.jenniferniang.karatetournament_app.fragment.general.User;
+//import com.example.jenniferniang.karatetournament_app.fragment.general.User;
 
 
 
@@ -24,6 +24,9 @@ public class RegisterFrag extends Fragment implements View.OnClickListener {
 //create member variables from my registration form for those signing up for the Karate Tournament
 private TextView mTvUserName, mTvLastName, mTvFirstName, mTvDelegRole, mTvAge, mTvGender, mTvCity,
         mTvCountry, mTvZipCode, mTvWeight, mTvExperience, mTvClubID, mTvInstructorLastName, mTvEvent;
+
+//adding spinners
+private TextView mTVSpinnerRole;
 
 //create edit button variable
 private Button mBtEdit;
@@ -86,13 +89,13 @@ public void onClick(View view) {
         // Create new fragment and transaction
         if (isValidData()) {
 
-        Fragment editRegisterFrag = new EditRegisterFrag();
+        //Fragment editRegisterFrag = new EditRegisterFrag();
 
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
         // Replace whatever is in the fragment_container view with this fragment,
         // and add the transaction to the back stack
-        transaction.replace(R.id.main_container, editRegisterFrag);
+       // transaction.replace(R.id.main_container, editRegisterFrag);
         transaction.addToBackStack(null);
 
         // Commit the transaction
