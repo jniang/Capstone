@@ -34,6 +34,7 @@ import java.util.Date;
 
 import com.example.jenniferniang.karatetournament_app.BuildConfig;
 import com.example.jenniferniang.karatetournament_app.R;
+import com.example.jenniferniang.karatetournament_app.activity.HomeActivity;
 import com.example.jenniferniang.karatetournament_app.general.User;
 
 
@@ -62,9 +63,6 @@ public class RegisterEnterFrag extends Fragment
         private ImageView mCoverImg;
 
 
-
-        private OnFloatingButtonClickListener mListener;
-
         static final int REQUEST_IMAGE_CAPTURE = 1;
 
         private User mUser = User.getInstance();
@@ -75,26 +73,11 @@ public class RegisterEnterFrag extends Fragment
             // Required empty public constructor
         }
 
-
-    public interface OnFloatingButtonClickListener {
-            void onFloatingButtonClicked();
-        }
-
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-
-           // mDatabase = FirebaseDatabase.getInstance().getReference();
-
+            super.onCreate(savedInstanceState);
             final View view = inflater.inflate(R.layout.fragment_register_enter, container, false);
-
-            try {
-                mListener = (OnFloatingButtonClickListener) getContext();
-                // Log.d("mContext is ", getContext().toString());
-            }catch (ClassCastException ex){
-                throw new ClassCastException("The hosting activity of the fragment" +
-                        "forgot to implement onFragmentInteractionListener");
-            }
 
             // Find view elements from layout
 
@@ -127,23 +110,24 @@ public class RegisterEnterFrag extends Fragment
             mButtonPicture = view.findViewById(R.id.button_get_user_picture);
             mButtonPicture.setOnClickListener(this);
 
+            //TODO: change to getActivity () and move back the spinner code
+
 
             return view;
         }
 
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            String text = parent.getItemAtPosition(position).toString();
-            Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String text = parent.getItemAtPosition(position).toString();
+                Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+            }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
 
         }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
 
-    }
-
-
-    /** Handles the profile picture getter and user creation buttons.
+        /** Handles the profile picture getter and user creation buttons.
          *
          * @param view the current view.
          */
@@ -174,11 +158,15 @@ public class RegisterEnterFrag extends Fragment
 
                 case R.id.button_get_started: {
                     // Check valid data entered
-                    if (isValidData()) {
-                        // Set the user profile
-                        setUserProfile();
-                        mListener.onFloatingButtonClicked();
-                    }
+                    System.out.println("clicked");
+                    Toast.makeText(getActivity(), "get started button clicked.", Toast.LENGTH_SHORT);
+                    startActivity(new Intent(this.getActivity(), HomeActivity.class));
+//                    if (isValidData()) {
+//                        // Set the user profile
+//                        setUserProfile();
+////                        mListener.onFloatingButtonClicked();
+//                        startActivity(new Intent(getActivity(), HomeActivity.class));
+//                    }
                     break;
                 }
             }
@@ -321,6 +309,10 @@ public class RegisterEnterFrag extends Fragment
                 }
             }
         }
+
+    public interface OnFloatingButtonClickListener {
+        void onFloatingButtonClicked();
     }
+}
 
 

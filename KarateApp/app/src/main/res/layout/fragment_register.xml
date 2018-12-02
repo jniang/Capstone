@@ -26,25 +26,24 @@
         android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tournament Registration"
-        tools:text="Tournament Registration"
+        android:text="User Registration"
+        tools:text="Register"
         android:textSize="48sp"
         android:textStyle="bold"
         android:paddingLeft="16dp"
         />
 
-    <!--period-->
-    <ImageView
-        android:id="@+id/period"
-        android:layout_height="32dp"
-        android:paddingBottom="16dp"
-        android:layout_width="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/reg_frag_title"
-        app:layout_constraintBottom_toBottomOf="@id/reg_frag_title"
-        android:src="@drawable/ic_period"
-        />
+        <ImageView
+            android:id="@+id/period"
+            android:layout_height="32dp"
+            android:paddingBottom="16dp"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/reg_frag_title"
+            app:layout_constraintBottom_toBottomOf="@id/reg_frag_title"
+            android:src="@drawable/ic_karate_silhouette_red" />
 
-    <!--UserRegisterPic-->
+
+        <!--UserRegisterPic-->
         <!--TODO:Change picture to the Karate Tournament Logo!-->
     <ImageView
         android:id="@+id/iv_register_pic"
@@ -55,7 +54,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/reg_frag_title"
-
         app:srcCompat="@drawable/ic_default_user_image"
         tools:ignore="VectorDrawableCompat"
         />

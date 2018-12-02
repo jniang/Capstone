@@ -1,15 +1,23 @@
 package com.example.jenniferniang.karatetournament_app.fragment;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
-/**
- * Created by jenniferniang on 11/28/18.
- */
+import com.example.jenniferniang.karatetournament_app.R;
 
-public class BracketFrag extends Fragment implements View.OnClickListener{
+public class BracketFrag extends Fragment {
+
+
     @Override
-    public void onClick(View v) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_bracket, container, false);
 
+        return view;
     }
+
+
 }

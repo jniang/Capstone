@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightBackgroundColor"
-    tools:context=".fragment.AthletesFrag">
+    tools:context=".fragment.ScoreboardFrag">
 
     <android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,7 +13,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:fillViewport="true"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        tools:context=".fragment.AthletesFrag">
+        tools:context=".fragment.ScoreboardFrag">
 
         <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -21,14 +21,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!--Title-->'
+            <!--Title-->
             <TextView
-                android:id="@+id/athlete_frag_title"
+                android:id="@+id/scoreboard_frag_title"
                 android:textColor="@android:color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Athletes/Divisions"
-                tools:text="Athletes/Divisions"
+                android:text="Scoreboard"
+                tools:text="Scoreboard"
                 android:textSize="48sp"
                 android:textStyle="bold"
                 android:paddingLeft="16dp"
@@ -39,9 +39,9 @@
                 android:layout_height="32dp"
                 android:paddingBottom="16dp"
                 android:layout_width="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/athlete_frag_title"
-                app:layout_constraintBottom_toBottomOf="@id/athlete_frag_title"
-                android:src="@drawable/ic_period" />
+                app:layout_constraintStart_toEndOf="@id/scoreboard_frag_title"
+                app:layout_constraintBottom_toBottomOf="@id/scoreboard_frag_title"
+                android:src="@drawable/ic_karate_silhouette_red" />
 
         </android.support.constraint.ConstraintLayout>
 
