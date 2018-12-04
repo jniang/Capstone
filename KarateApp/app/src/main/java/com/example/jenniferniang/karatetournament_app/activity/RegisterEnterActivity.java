@@ -18,49 +18,48 @@ import com.example.jenniferniang.karatetournament_app.fragment.RegisterEnterFrag
  * Created by jenniferniang on 12/1/18.
  */
 
-public class RegisterEnterActivity extends AppCompatActivity implements
-   AdapterView.OnItemSelectedListener{
+public class RegisterEnterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_register_enter);
-        if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, new RegisterEnterFrag())
-                    .commit();
+//        if(savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.container, new RegisterEnterFrag())
+//                    .commit();
         }
 //        setContentView(R.layout.fragment_register_enter);
 
         //Spinners for Register Layout
         //-----Spinner Role-----
-        Spinner spinnerRole = (Spinner) findViewById(R.id.spinner_role);
-        ArrayAdapter<CharSequence> adapterRole = ArrayAdapter.createFromResource(this, R.array.roles, android.R.layout.simple_spinner_item);
-        adapterRole.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerRole.setAdapter(adapterRole);
-
-        //-----Spinner Experience-----
-        Spinner spinnerExperience = (Spinner) findViewById(R.id.spinner_experience);
-        ArrayAdapter<CharSequence> adapterExperience = ArrayAdapter.createFromResource(this, R.array.experience, android.R.layout.simple_spinner_item);
-        adapterExperience.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerExperience.setAdapter(adapterExperience);
-
-        //-----Spinner Club-----
-        Spinner spinnerClubID = (Spinner) findViewById(R.id.spinner_clubID);
-        ArrayAdapter<CharSequence> adapterClub = ArrayAdapter.createFromResource(this, R.array.clubID, android.R.layout.simple_spinner_item);
-        adapterClub.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerClubID.setAdapter(adapterClub);
+//        Spinner spinnerRole = (Spinner) findViewById(R.id.spinner_role);
+//        ArrayAdapter<CharSequence> adapterRole = ArrayAdapter.createFromResource(this, R.array.roles, android.R.layout.simple_spinner_item);
+//        adapterRole.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerRole.setAdapter(adapterRole);
+//
+//        //-----Spinner Experience-----
+//        Spinner spinnerExperience = (Spinner) findViewById(R.id.spinner_experience);
+//        ArrayAdapter<CharSequence> adapterExperience = ArrayAdapter.createFromResource(this, R.array.experience, android.R.layout.simple_spinner_item);
+//        adapterExperience.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerExperience.setAdapter(adapterExperience);
+//
+//        //-----Spinner Club-----
+//        Spinner spinnerClubID = (Spinner) findViewById(R.id.spinner_clubID);
+//        ArrayAdapter<CharSequence> adapterClub = ArrayAdapter.createFromResource(this, R.array.clubID, android.R.layout.simple_spinner_item);
+//        adapterClub.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerClubID.setAdapter(adapterClub);
     }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
+//
+//    @Override
+//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//
+//    }
+//
+//    @Override
+//    public void onNothingSelected(AdapterView<?> parent) {
+//
+//    }
 
 //    @Override
 //    public void onClick(View view) {
@@ -101,4 +100,4 @@ public class RegisterEnterActivity extends AppCompatActivity implements
 //            }
 //        }
 //    }
-}
+//}
