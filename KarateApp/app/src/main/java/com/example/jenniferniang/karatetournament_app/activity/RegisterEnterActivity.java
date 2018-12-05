@@ -14,9 +14,6 @@ import android.widget.Toast;
 import com.example.jenniferniang.karatetournament_app.R;
 import com.example.jenniferniang.karatetournament_app.fragment.RegisterEnterFrag;
 
-/**
- * Created by jenniferniang on 12/1/18.
- */
 
 public class RegisterEnterActivity extends AppCompatActivity {
 
