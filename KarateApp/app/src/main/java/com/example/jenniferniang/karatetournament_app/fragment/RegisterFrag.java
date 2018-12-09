@@ -23,10 +23,10 @@ public class RegisterFrag extends Fragment implements View.OnClickListener {
 
 //create member variables from my registration form for those signing up for the Karate Tournament
 private TextView mTvUserName, mTvLastName, mTvFirstName, mTvDelegRole, mTvAge, mTvGender, mTvCity,
-        mTvCountry, mTvZipCode, mTvWeight, mTvExperience, mTvClubID, mTvInstructorLastName, mTvEvent;
+        mTvCountry, mTvZipCode, mTvWeight, mTvExperience, mTvClubID, mTvInstructorLastName;
 
 //adding spinners
-private TextView mTVSpinnerRole;
+private TextView mTvSpinnerRole;
 
 //create edit button variable
 private Button mBtEdit;
@@ -54,7 +54,6 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container,
         mTvExperience = (TextView) view.findViewById(R.id.tv_experience_data);
         mTvClubID = (TextView) view.findViewById(R.id.tv_clubID_data);
         mTvInstructorLastName = (TextView) view.findViewById(R.id.tv_instructorName_data);
-        mTvEvent = (TextView) view.findViewById(R.id.tv_event_data);
 
         mBtEdit = (Button) view.findViewById(R.id.bt_edit_register);
         mBtEdit.setOnClickListener(this);
@@ -121,8 +120,7 @@ private boolean isValidData() {
                 || mTvExperience.getText().toString().matches("")
                 || mTvWeight.getText().toString().matches("")
                 || mTvClubID.getText().toString().matches("")
-                || mTvInstructorLastName.getText().toString().matches("")
-                || mTvEvent.getText().toString().matches("")) {
+                || mTvInstructorLastName.getText().toString().matches("")) {
         Toast toast = Toast.makeText(getActivity(),
         "Invalid data entered", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP, 0, 0);
@@ -130,15 +128,6 @@ private boolean isValidData() {
         return false;
         }
 
-//        if (!mTvAge.getText().toString().matches("^(0|[1-9][0-9]*)$")
-//                || !mTvHeight.getText().toString().matches("^(0|[1-9][0-9]*)$")
-//                || !mTvWeight.getText().toString().matches("^(0|[1-9][0-9]*)$")) {
-//            Toast toast = Toast.makeText(getActivity(),
-//                    "Please enter numbers for the height, weight, target hikes, target BMI, and target calories fields", Toast.LENGTH_SHORT);
-//            toast.setGravity(Gravity.TOP, 0, 0);
-//            toast.show();
-//            return false;
-//        }
         return true;
     }
 }

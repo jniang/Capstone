@@ -172,7 +172,7 @@ public class RegisterEnterFrag extends Fragment
             }
         }
 
-        private void setUserProfile() {
+        private void setUserRegister() {
             mUser.setUserName(mUserName);
             mUser.setFirstName(mFirstName);
             mUser.setLastName(mLastName);
@@ -186,7 +186,6 @@ public class RegisterEnterFrag extends Fragment
             mUser.setExperience(mExperience);
             mUser.setClubID(mClubID);
             mUser.setInstructorLastName(mIntructorName);
-            mUser.setEvent(mEvent);
 
 
             mUser.setRegisterPic(mCurrentPhotoPath);

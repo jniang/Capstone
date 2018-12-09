@@ -21,7 +21,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="cs6018.lifestyleapp"
+            android:authorities="com.example.jenniferniang.karatetournament_app"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

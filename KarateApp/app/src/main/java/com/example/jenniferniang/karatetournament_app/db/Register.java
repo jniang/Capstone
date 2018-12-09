@@ -1,32 +1,16 @@
-package com.example.jenniferniang.karatetournament_app.general;
+package com.example.jenniferniang.karatetournament_app.db;
 
+
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
+@Entity(tableName = "register_table")
+public class Register {
 
-public class User {
-
-    private static User INSTANCE = null;
-
-    // Returns a single instance of this class, creating it if necessary.
-    public static User getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new User();
-        }
-        return INSTANCE;
-    }
-
-    private static String UUID;
-
-    public static void setUUID(String id) {
-        UUID = id;
-    }
-
-    public static String getUUID() {
-        return UUID;
-    }
-
-
+    @PrimaryKey(autoGenerate = true)
+    private int userID;
 
     // User Registration Data: 14 things for data fields
     private String userName;
@@ -44,10 +28,38 @@ public class User {
     private String instructorLastName;
     private String registerPic;
 
+    public Register(String userName, String lastName, String firstName, String delegRole,
+                String age, String gender, String city, String country, String zipCode,
+                String weight, String experience, String clubID, String instructorLastName,
+                String registerPic){
+        this.userName = userName;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.delegRole = delegRole;
+        this.age = age;
+        this.gender = gender;
+        this.city = city;
+        this.country = country;
+        this.zipCode = zipCode;
+        this.weight = weight;
+        this.experience = experience;
+        this.clubID = clubID;
+        this.instructorLastName = instructorLastName;
+        this.registerPic = registerPic;
 
+    }
 
 
     //adding all of my getter and setter for my register data
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+
 
     //1) userName
     public String getUserName() {
@@ -164,5 +176,3 @@ public class User {
     public void setRegisterPic(String pic) { this.registerPic = pic; }
 
 }
-
-

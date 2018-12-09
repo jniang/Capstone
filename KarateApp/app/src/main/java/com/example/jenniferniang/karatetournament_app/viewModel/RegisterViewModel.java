@@ -6,27 +6,44 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.support.annotation.NonNull;
 
+import com.example.jenniferniang.karatetournament_app.db.Register;
 import com.example.jenniferniang.karatetournament_app.general.User;
 import com.example.jenniferniang.karatetournament_app.repository.RegisterRepository;
 
+import java.util.List;
+
 public class RegisterViewModel extends AndroidViewModel {
 
-    private MutableLiveData<User> jsonData;
-    private RegisterRepository mRegisterRepository;
+    private RegisterRepository registerRepository;
+    private LiveData<List<Register>> allRegisters;
 
     public RegisterViewModel(@NonNull Application application) {
         super(application);
 
-        mRegisterRepository = new RegisterRepository(application);
-        jsonData = mRegisterRepository.getData();
+        registerRepository = new RegisterRepository(application);
+        allRegisters = registerRepository.getAllRegisters();
 
     }
 
-    public void setUser(String userName, String userJson){
-        mRegisterRepository.setUser(userName, userJson);
+    public void insert(Register register) {
+        registerRepository.insert(register);
     }
 
-    public LiveData<User> getData(){
-        return  jsonData;
+    public void update(Register register) {
+        registerRepository.update(register);
+    }
+
+    public void delete(Register register) {
+        registerRepository.delete(register);
+    }
+
+    public void deleteAllRegisters() {
+        registerRepository.deleteAllRegisters();
+    }
+
+    public LiveData<List<Register>> getAllRegisters() {
+        return allRegisters;
     }
 }
+
+

@@ -1,80 +1,100 @@
 package com.example.jenniferniang.karatetournament_app.repository;
 
 import android.app.Application;
+import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.os.AsyncTask;
 
-import com.example.jenniferniang.karatetournament_app.Utils.JSONRegisterUtils;
-import com.example.jenniferniang.karatetournament_app.activity.db.RegisterDao;
-import com.example.jenniferniang.karatetournament_app.activity.db.RegisterRoomDatabase;
-import com.example.jenniferniang.karatetournament_app.activity.db.RegisterTable;
-import com.example.jenniferniang.karatetournament_app.general.User;
+import com.example.jenniferniang.karatetournament_app.db.RegisterDao;
+import com.example.jenniferniang.karatetournament_app.db.RegisterDatabase;
+import com.example.jenniferniang.karatetournament_app.db.Register;
 
-import org.json.JSONException;
+import java.util.List;
 
 public class RegisterRepository {
 
-    private final MutableLiveData<User> jsonData = new MutableLiveData<User>();
-    private String mUserJson;
-    private RegisterDao mRegisterDao;
-    private String mJsonString;
-    private String mUsername;
+    private LiveData<List<Register>> allRegisters;
+    private RegisterDao registerDao;
 
-    public ProfileRepository(Application application){
-        RegisterRoomDatabase db = RegisterRoomDatabase.getDatabase(application);
-        mRegisterDao = db.registerDao();
-        //loadData();
+
+    public RegisterRepository(Application application){
+        RegisterDatabase database = RegisterDatabase.getInstance(application);
+        registerDao = database.registerDao();
+        allRegisters = registerDao.getAllRegisters();
+    }
+    public void insert(Register register) {
+        new InsertRegisterAsyncTask(registerDao).execute(register);
     }
 
-    public void setUser(String userName, String user){
-        mUsername = userName;
-        mUserJson = user;
-        loadData();
+    public void update(Register register) {
+        new UpdateRegisterAsyncTask(registerDao).execute(register);
     }
 
-    public MutableLiveData<User> getData(){
-        return jsonData;
+    public void delete(Register register) {
+        new DeleteRegisterAsyncTask(registerDao).execute(register);
     }
 
-    public void loadData(){
-        new AsyncTask<String, Void, String>(){
-            @Override
-            protected String doInBackground(String... strings){
-                String userJson = strings[0];
-                return  userJson;
-            }
-            @Override
-            protected void onPostExcecute(String s){
-                if(s != null){
-                    mJsonString = s;
-                    insert();
-                }
-                try{
-                    jsonData.setValue(JSONRegisterUtils.getRegisterData(s));
-                } catch(JSONException e){
-                    e.printStackTrace();
-                }
-            }
-        }.execute(mUserJson);
+    public void deleteAllRegisters() {
+        new DeleteAllRegistersAsyncTask(registerDao).execute();
     }
 
-    private void insert(){
-        RegisterTable registerTable = new RegisterTable(mUsername, mJsonString);
-        new insertAsyncTask(mRegisterDao).execute(registerTable);
+    public LiveData<List<Register>> getAllRegisters() {
+        return allRegisters;
     }
 
-    private static class insertAsyncTask extends AsyncTask<RegisterTable, Void, Void>{
-        private  RegisterDao mAsyncTaskDao;
+    private static class InsertRegisterAsyncTask extends AsyncTask<Register, Void, Void> {
+        private RegisterDao registerDao;
 
-        insertAsyncTask(RegisterDao dao){
-            mAsyncTaskDao = dao;
+        private InsertRegisterAsyncTask(RegisterDao registerDao) {
+            this.registerDao = registerDao;
         }
 
         @Override
-        protected Void doInBackground(RegisterTable... registerTables){
-            mAsyncTaskDao.insert(registerTables[0]);
+        protected Void doInBackground(Register... registers) {
+            registerDao.insert(registers[0]);
             return null;
         }
     }
 
+    private static class UpdateRegisterAsyncTask extends AsyncTask<Register, Void, Void> {
+        private RegisterDao registerDao;
+
+        private UpdateRegisterAsyncTask(RegisterDao registerDao) {
+            this.registerDao = registerDao;
+        }
+
+        @Override
+        protected Void doInBackground(Register... registers) {
+            registerDao.update(registers[0]);
+            return null;
+        }
+    }
+
+    private static class DeleteRegisterAsyncTask extends AsyncTask<Register, Void, Void> {
+        private RegisterDao registerDao;
+
+        private DeleteRegisterAsyncTask(RegisterDao registerDao) {
+            this.registerDao = registerDao;
+        }
+
+        @Override
+        protected Void doInBackground(Register... registers) {
+            registerDao.delete(registers[0]);
+            return null;
+        }
+    }
+
+    private static class DeleteAllRegistersAsyncTask extends AsyncTask<Void, Void, Void> {
+        private RegisterDao registerDao;
+
+        private DeleteAllRegistersAsyncTask(RegisterDao registerDao) {
+            this.registerDao = registerDao;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            registerDao.deleteAllRegisters();
+            return null;
+        }
+    }
 }

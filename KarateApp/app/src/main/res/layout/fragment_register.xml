@@ -479,36 +479,36 @@
 
         <!--Event-->
         <!--TODO: drop down list of upcoming Tournament or other events-->
-        <TextView
-            android:id="@+id/tv_event"
-            android:layout_width="wrap_content"
-            android:layout_height="64dp"
-            android:gravity="left|center_vertical"
-            android:paddingStart="16dp"
-            android:paddingTop="16dp"
-            android:text="Event"
-            android:textColor="@color/textLabelDefault"
-            android:textSize="@dimen/text_size"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/reg_frag_title"
-            app:layout_constraintTop_toBottomOf="@id/tv_instructorName"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/tv_event"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="64dp"-->
+            <!--android:gravity="left|center_vertical"-->
+            <!--android:paddingStart="16dp"-->
+            <!--android:paddingTop="16dp"-->
+            <!--android:text="Event"-->
+            <!--android:textColor="@color/textLabelDefault"-->
+            <!--android:textSize="@dimen/text_size"-->
+            <!--android:textStyle="bold"-->
+            <!--app:layout_constraintStart_toStartOf="@id/reg_frag_title"-->
+            <!--app:layout_constraintTop_toBottomOf="@id/tv_instructorName"-->
+            <!--/>-->
 
-        <TextView
-            android:id="@+id/tv_event_data"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:text="IMA Championship 2018"
-            tools:text="IMA Championship 2018"
-            android:textSize="@dimen/text_size"
-            android:textStyle="bold"
-            android:paddingStart="16dp"
-            app:layout_constraintStart_toEndOf="@id/tv_event"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/tv_event"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/tv_event_data"-->
+            <!--android:textColor="@color/colorPrimaryDark"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:text="IMA Championship 2018"-->
+            <!--tools:text="IMA Championship 2018"-->
+            <!--android:textSize="@dimen/text_size"-->
+            <!--android:textStyle="bold"-->
+            <!--android:paddingStart="16dp"-->
+            <!--app:layout_constraintStart_toEndOf="@id/tv_event"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintBottom_toBottomOf="@id/tv_event"-->
+            <!--/>-->
 
 
         <!--Register Athlete Button-->
@@ -524,7 +524,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             style="@style/Widget.AppCompat.Button.Colored"
-            app:layout_constraintTop_toBottomOf="@id/tv_event"
+            app:layout_constraintTop_toBottomOf="@id/tv_instructorName"
             />
 
 
