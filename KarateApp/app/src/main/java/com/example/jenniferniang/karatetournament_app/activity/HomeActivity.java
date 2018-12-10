@@ -17,6 +17,7 @@ import android.widget.Spinner;
 
 
 import com.example.jenniferniang.karatetournament_app.fragment.BracketFrag;
+import com.example.jenniferniang.karatetournament_app.fragment.EventFrag;
 import com.example.jenniferniang.karatetournament_app.fragment.RegisterFrag;
 import com.example.jenniferniang.karatetournament_app.fragment.ResultFrag;
 import com.example.jenniferniang.karatetournament_app.fragment.ScoreboardFrag;
@@ -26,7 +27,7 @@ public class HomeActivity  extends AppCompatActivity {
 
     final Fragment resultFrag = new ResultFrag();
     final Fragment bracketFrag = new BracketFrag();
-    final Fragment scoreboardFrag = new ScoreboardFrag();
+    final Fragment eventFrag = new EventFrag();
     final Fragment registerFrag = new RegisterFrag();
     final FragmentManager fragBoss = getSupportFragmentManager();
     Fragment active = resultFrag;
@@ -53,10 +54,10 @@ public class HomeActivity  extends AppCompatActivity {
                     fragBoss.beginTransaction().hide(active).show(bracketFrag).commit();
                     active = bracketFrag;
                     return true;
-                case R.id.navigation_scoreboard:
+                case R.id.navigation_event:
 
-                    fragBoss.beginTransaction().hide(active).show(scoreboardFrag).commit();
-                    active = scoreboardFrag;
+                    fragBoss.beginTransaction().hide(active).show(eventFrag).commit();
+                    active = eventFrag;
                     return true;
             }
             return false;
@@ -71,7 +72,7 @@ public class HomeActivity  extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        fragBoss.beginTransaction().add(R.id.main_container, scoreboardFrag, "4").hide(registerFrag).commit();
+        fragBoss.beginTransaction().add(R.id.main_container, eventFrag, "4").hide(registerFrag).commit();
         fragBoss.beginTransaction().add(R.id.main_container, resultFrag, "3").hide(resultFrag).commit();
         fragBoss.beginTransaction().add(R.id.main_container, bracketFrag, "2").hide(bracketFrag).commit();
         fragBoss.beginTransaction().add(R.id.main_container, registerFrag, "1").commit();

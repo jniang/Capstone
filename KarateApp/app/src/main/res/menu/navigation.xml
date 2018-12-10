@@ -17,8 +17,8 @@
         android:title="@string/title_bracket" />
 
     <item
-        android:id="@+id/navigation_scoreboard"
-        android:icon="@drawable/ic_scoreboard"
+        android:id="@+id/navigation_event"
+        android:icon="@drawable/ic_event"
         android:title="@string/title_scoreboard" />
 
 </menu>
