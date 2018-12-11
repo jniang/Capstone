@@ -124,7 +124,7 @@ public class EventFrag extends Fragment {
             String description = data.getStringExtra(AddEditEventActivity.EXTRA_DESCRIPTION);
             int priority = data.getIntExtra(AddEditEventActivity.EXTRA_PRIORITY, 1);
 
-            Event event = new Event(title, description,priority);
+            Event event = new Event(title, description, priority);
             eventViewModel.insert(event);
 
             Toast.makeText(getActivity(), "Event Saved", Toast.LENGTH_SHORT).show();

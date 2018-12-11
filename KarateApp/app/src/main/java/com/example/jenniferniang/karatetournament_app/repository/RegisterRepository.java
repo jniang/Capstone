@@ -2,11 +2,10 @@ package com.example.jenniferniang.karatetournament_app.repository;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.os.AsyncTask;
 
+import com.example.jenniferniang.karatetournament_app.db.KarateDatabase;
 import com.example.jenniferniang.karatetournament_app.db.RegisterDao;
-import com.example.jenniferniang.karatetournament_app.db.RegisterDatabase;
 import com.example.jenniferniang.karatetournament_app.db.Register;
 
 import java.util.List;
@@ -18,7 +17,7 @@ public class RegisterRepository {
 
 
     public RegisterRepository(Application application){
-        RegisterDatabase database = RegisterDatabase.getInstance(application);
+        KarateDatabase database = KarateDatabase.getInstance(application);
         registerDao = database.registerDao();
         allRegisters = registerDao.getAllRegisters();
     }

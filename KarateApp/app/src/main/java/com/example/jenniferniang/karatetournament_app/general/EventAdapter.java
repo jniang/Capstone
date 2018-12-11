@@ -61,7 +61,7 @@ public class EventAdapter extends ListAdapter<Event, EventAdapter.EventHolder> {
         public EventHolder(View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_event_title);
-            tvDescription = itemView.findViewById(R.id.text_view_description);
+            tvDescription = itemView.findViewById(R.id.tv_description);
             tvPriority = itemView.findViewById(R.id.tv_priority);
 
             itemView.setOnClickListener(new View.OnClickListener() {

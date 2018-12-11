@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="activity.AddEditEventActivity">
+
+
+    <EditText
+        android:id="@+id/et_userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="USER NAME"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/et_lastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="LAST NAME"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_firstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="FIRST NAME"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_delegRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ROLE"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="LAST NAME"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="GENDER"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CITY"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="COUNTRY"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_zipCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ZIPCODE"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="WEIGHT"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_experience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="EXPERIENCE"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_clubID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="LAST NAME"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_instructorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="LAST NAME"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/et_registerPic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PICTURE"
+        android:inputType="text" />
+
+</LinearLayout>

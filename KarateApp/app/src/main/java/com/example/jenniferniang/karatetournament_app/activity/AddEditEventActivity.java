@@ -15,13 +15,13 @@ import com.example.jenniferniang.karatetournament_app.R;
 public class AddEditEventActivity extends AppCompatActivity {
 
     public static final String EXTRA_ID =
-            "com.example.enniferniang.karatetournament_app.activity.EXTRA_ID";
+            "com.example.jenniferniang.architectureexample.EXTRA_ID";
     public static final String EXTRA_TITLE =
-            "com.example.enniferniang.karatetournament_app.activity.EXTRA_TITLE";
+            "com.example.jenniferniang.architectureexample.EXTRA_TITLE";
     public static final String EXTRA_DESCRIPTION =
-            "com.example.enniferniang.karatetournament_app.activity.EXTRA_DESCRIPTION";
+            "com.example.jenniferniang.architectureexample.EXTRA_DESCRIPTION";
     public static final String EXTRA_PRIORITY =
-            "com.example.enniferniang.karatetournament_app.activity.EXTRA_PRIORITY";
+            "com.example.jenniferniang.architectureexample.EXTRA_PRIORITY";
 
     private EditText etTitle;
     private EditText etDescription;
@@ -43,33 +43,34 @@ public class AddEditEventActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        if (intent.hasExtra(EXTRA_ID)) {
-            setTitle("Edit Note");
+        if(intent.hasExtra(EXTRA_ID)){
+            setTitle("Edit Event");
             etTitle.setText(intent.getStringExtra(EXTRA_TITLE));
             etDescription.setText(intent.getStringExtra(EXTRA_DESCRIPTION));
             numberPickerPriority.setValue(intent.getIntExtra(EXTRA_PRIORITY, 1));
         } else {
-            setTitle("Add Note");
+            setTitle("Add Event");
         }
     }
 
-    private void saveNote() {
+    private void saveEvent(){
         String title = etTitle.getText().toString();
         String description = etDescription.getText().toString();
         int priority = numberPickerPriority.getValue();
 
-        if (title.trim().isEmpty() || description.trim().isEmpty()) {
-            Toast.makeText(this, "Please insert a title and description", Toast.LENGTH_SHORT).show();
+        if(title.trim().isEmpty() || description.trim().isEmpty()){
+            Toast.makeText(this, "Please insert a Title and Description", Toast.LENGTH_SHORT).show();
+
             return;
         }
-
         Intent data = new Intent();
-        data.putExtra(EXTRA_TITLE, title);
+        data.putExtra(Intent.EXTRA_TITLE, title);
         data.putExtra(EXTRA_DESCRIPTION, description);
         data.putExtra(EXTRA_PRIORITY, priority);
 
         int id = getIntent().getIntExtra(EXTRA_ID, -1);
-        if (id != -1) {
+
+        if(id != -1){
             data.putExtra(EXTRA_ID, id);
         }
 
@@ -88,12 +89,14 @@ public class AddEditEventActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.save_event:
-                saveNote();
+                saveEvent();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
 }
+
+
+
+

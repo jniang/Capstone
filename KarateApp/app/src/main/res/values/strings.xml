@@ -3,7 +3,7 @@
 
     <string name="title_register">Register</string>
     <string name="title_bracket">Bracket</string>
-    <string name="title_scoreboard">Scoreboard</string>
+    <string name="title_event">Event</string>
     <string name="title_result">Result</string>
     <string name="hello_blank_fragment">blank</string>
 

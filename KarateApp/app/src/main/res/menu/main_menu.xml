@@ -14,5 +14,10 @@
         android:title="Delete All Events"
         app:showAsAction = "never"/>
 
+    <item
+        android:id="@+id/delete_all_registers"
+        android:title="Delete All Registers"
+        app:showAsAction = "never"/>
+
 
 </menu>
