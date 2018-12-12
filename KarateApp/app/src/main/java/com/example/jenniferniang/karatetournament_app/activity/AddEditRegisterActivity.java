@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.NumberPicker;
 import android.widget.Toast;
 
 import com.example.jenniferniang.karatetournament_app.R;
@@ -140,6 +139,7 @@ public class AddEditRegisterActivity extends AppCompatActivity {
         data.putExtra(EXTRA_FIRSTNAME, firstName);
         data.putExtra(EXTRA_ROLE, delegRole);
         data.putExtra(EXTRA_AGE, age);
+        System.out.println("gender: " + gender);
         data.putExtra(EXTRA_GENDER, gender);
         data.putExtra(EXTRA_CITY, city);
         data.putExtra(EXTRA_COUNTRY, country);

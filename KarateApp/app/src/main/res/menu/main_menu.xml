@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="Settings"
-        app:showAsAction="never"
-        />
+    <!--<item-->
+        <!--android:id="@+id/action_settings"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="Settings"-->
+        <!--app:showAsAction="never"-->
+        <!--/>-->
 
     <item
         android:id="@+id/delete_all_events"
         android:title="Delete All Events"
         app:showAsAction = "never"/>
 
-    <item
-        android:id="@+id/delete_all_registers"
-        android:title="Delete All Registers"
-        app:showAsAction = "never"/>
+    <!--<item-->
+        <!--android:id="@+id/delete_all_registers"-->
+        <!--android:title="Delete All Registers"-->
+        <!--app:showAsAction = "never"/>-->
 
 
 </menu>

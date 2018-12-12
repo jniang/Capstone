@@ -42,6 +42,7 @@ public class EventFrag extends Fragment {
 
     public static final int ADD_EVENT_REQUEST = 1;
     public static final int EDIT_EVENT_REQUEST = 2;
+    public static final int  DELETE_EVENT_REQUEST = 3;
 
     private  EventViewModel eventViewModel;
 
@@ -61,6 +62,15 @@ public class EventFrag extends Fragment {
             }
         });
 
+        FloatingActionButton buttonDeleteEvent = view.findViewById(R.id.btn_delete_event);
+        buttonDeleteEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), AddEditEventActivity.class);
+//                startActivityForResult(intent, DELETE_EVENT_REQUEST);
+                eventViewModel.deleteAllEvents();
+            }
+        });
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -85,6 +95,7 @@ public class EventFrag extends Fragment {
                 adapter.submitList(events);
             }
         });
+
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {

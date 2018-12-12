@@ -58,11 +58,14 @@ public class RegisterAdapter extends ListAdapter<Register, RegisterAdapter.Regis
     @Override
     public void onBindViewHolder(@NonNull RegisterAdapter.RegisterHolder holder, int position) {
         Register currentRegister = getItem(position);
+        System.out.println("holder: " + holder);
         holder.tvUserName.setText(currentRegister.getUserName());
+        System.out.println("username: " + currentRegister.getUserName());
         holder.tvLastName.setText(currentRegister.getLastName());
         holder.tvFirstName.setText(currentRegister.getFirstName());
         holder.tvDelegRole.setText(currentRegister.getDelegRole());
         holder.tvAge.setText(currentRegister.getAge());
+        System.out.println("gender: " + currentRegister.getGender());
         holder.tvGender.setText(currentRegister.getGender());
         holder.tvCity.setText(currentRegister.getCity());
         holder.tvCountry.setText(currentRegister.getCountry());
@@ -105,7 +108,7 @@ public class RegisterAdapter extends ListAdapter<Register, RegisterAdapter.Regis
             tvFirstName = itemView.findViewById(R.id.tv_register_firstname);
             tvDelegRole = itemView.findViewById(R.id.tv_register_role);
             tvAge = itemView.findViewById(R.id.tv_register_age);
-            tvGender = itemView.findViewById(R.id.tv_gender);
+            tvGender = itemView.findViewById(R.id.tv_register_gender);
             tvCity = itemView.findViewById(R.id.tv_register_city);
             tvCountry = itemView.findViewById(R.id.tv_register_country);
             tvZipCode = itemView.findViewById(R.id.tv_register_zipcode);

@@ -207,10 +207,10 @@ public class RegisterFrag extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.delete_all_registers:
-                registerViewModel.deleteAllRegisters();
-                Toast.makeText(getActivity(), "All Register Deleted", Toast.LENGTH_SHORT).show();
-                return true;
+//            case R.id.delete_all_registers:
+//                registerViewModel.deleteAllRegisters();
+//                Toast.makeText(getActivity(), "All Register Deleted", Toast.LENGTH_SHORT).show();
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

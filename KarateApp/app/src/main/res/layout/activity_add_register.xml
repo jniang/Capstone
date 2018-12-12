@@ -38,7 +38,7 @@
         android:id="@+id/et_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="LAST NAME"
+        android:hint="AGE"
         android:inputType="text" />
     <EditText
         android:id="@+id/et_gender"
@@ -80,13 +80,13 @@
         android:id="@+id/et_clubID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="LAST NAME"
+        android:hint="CLUB NAME"
         android:inputType="text" />
     <EditText
         android:id="@+id/et_instructorName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="LAST NAME"
+        android:hint="INSTRUCTOR LAST NAME"
         android:inputType="text" />
     <EditText
         android:id="@+id/et_registerPic"

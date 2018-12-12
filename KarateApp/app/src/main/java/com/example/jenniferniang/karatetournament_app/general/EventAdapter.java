@@ -27,6 +27,19 @@ public class EventAdapter extends ListAdapter<Event, EventAdapter.EventHolder> {
 
         @Override
         public boolean areContentsTheSame(Event oldItem, Event newItem) {
+            if (oldItem.getTitle() == null) {
+                System.out.println(oldItem.getId() + ", old title: null");
+            } else {
+                System.out.println(oldItem.getId() + ", old title: " + oldItem.getTitle());
+            }
+
+            if (newItem.getTitle() == null) {
+                System.out.println(newItem.getId() + ", new title: null");
+            } else {
+                System.out.println(newItem.getId() + ", new title: " + newItem.getTitle());
+            }
+//            System.out.println("oldItem: :" + oldItem.toString());
+//            System.out.println("newItem: :" + newItem.toString());
             return oldItem.getTitle().equals(newItem.getTitle()) &&
                     oldItem.getDescription().equals(newItem.getDescription()) &&
                     oldItem.getPriority() == newItem.getPriority();
