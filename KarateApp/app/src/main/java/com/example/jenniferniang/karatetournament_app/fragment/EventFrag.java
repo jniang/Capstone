@@ -42,7 +42,7 @@ public class EventFrag extends Fragment {
 
     public static final int ADD_EVENT_REQUEST = 1;
     public static final int EDIT_EVENT_REQUEST = 2;
-    public static final int  DELETE_EVENT_REQUEST = 3;
+    public static final int DELETE_EVENT_REQUEST = 3;
 
     private  EventViewModel eventViewModel;
 
@@ -95,7 +95,7 @@ public class EventFrag extends Fragment {
                 adapter.submitList(events);
             }
         });
-
+//        eventViewModel.deleteAllEvents();
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {

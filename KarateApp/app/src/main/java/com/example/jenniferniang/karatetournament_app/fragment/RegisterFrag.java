@@ -68,6 +68,16 @@ public class RegisterFrag extends Fragment {
             }
         });
 
+        FloatingActionButton buttonDeleteEvent = view.findViewById(R.id.btn_delete_register);
+        buttonDeleteEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), AddEditEventActivity.class);
+//                startActivityForResult(intent, DELETE_EVENT_REQUEST);
+                registerViewModel.deleteAllRegisters();
+            }
+        });
+
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

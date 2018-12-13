@@ -64,7 +64,7 @@ public class AddEditEventActivity extends AppCompatActivity {
             return;
         }
         Intent data = new Intent();
-        data.putExtra(Intent.EXTRA_TITLE, title);
+        data.putExtra(EXTRA_TITLE, title);
         data.putExtra(EXTRA_DESCRIPTION, description);
         data.putExtra(EXTRA_PRIORITY, priority);
 

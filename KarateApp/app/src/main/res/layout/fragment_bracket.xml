@@ -1,50 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightBackgroundColor"
-    tools:context=".fragment.ScoreboardFrag">
+    android:background="#110f0f"
+    android:orientation="vertical">
 
-    <android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:fillViewport="true"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        tools:context=".fragment.BracketFrag">
+        android:orientation="vertical"
+        android:scrollbars="none">
 
-        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!--Title-->
+            <com.example.jenniferniang.karatetournament_app.customviews.WrapContentHeightViewPager
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
             <TextView
-                android:id="@+id/bracket_frag_title"
-                android:textColor="@android:color/black"
+                android:id="@+id/no_content_text"
+                android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bracket"
-                tools:text="Bracket"
-                android:textSize="48sp"
-                android:textStyle="bold"
-                android:paddingLeft="16dp"
-                />
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
-            <ImageView
-                android:id="@+id/period"
-                android:layout_height="32dp"
-                android:paddingBottom="16dp"
-                android:layout_width="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/bracket_frag_title"
-                app:layout_constraintBottom_toBottomOf="@id/bracket_frag_title"
-                android:src="@drawable/ic_karate_silhouette_red" />
+        </RelativeLayout>
 
-        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 
-    </android.support.v4.widget.NestedScrollView>
+    <RelativeLayout
+        android:id="@+id/gf_container"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</FrameLayout>
+    </RelativeLayout>
+</RelativeLayout>

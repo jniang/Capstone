@@ -63,7 +63,7 @@ public abstract class KarateDatabase extends RoomDatabase {
                     "Athlete", "7", "male", "Sandy", "USA", "84092",
                     "50", "0-1 Beginner", "MA Budokan Shotokan",
                     "Niang", "yes"));
-            eventDao.insert(new Event("Title 1", "Description 1", 1));
+//            eventDao.insert(new Event("Title 1", "Description 1", 1));
             return null;
 
         }

@@ -27,6 +27,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
+
         </provider>
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -39,6 +40,8 @@
         <activity android:name=".activity.RegisterEnterActivity" />
         <activity android:name=".activity.AddEditEventActivity" />
         <activity android:name=".activity.AddEditRegisterActivity" />
+        <activity android:name=".activity.BracketActivity" />
+
     </application>
 
 </manifest>
